@@ -1,0 +1,193 @@
+/* ==========================
+   RESET
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    width:430px;
+    min-height:100vh;
+    margin:0 auto;
+    overflow-x:hidden;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+    background:linear-gradient(135deg,#2563EB,#60A5FA);
+    color:white;
+    padding:50px 25px 30px;
+    border-radius:0 0 30px 30px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.back-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.25);
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.header h1{
+    font-size:28px;
+    font-weight:600;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+    width:100%;
+    padding:25px 20px 40px;
+}
+
+/* ==========================
+   FORM
+========================== */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:8px;
+    font-size:15px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:#F5F5F5;
+    font-size:15px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border:2px solid #2563EB;
+    background:white;
+}
+
+textarea{
+    resize:none;
+}
+
+/* ==========================
+   INPUT ICON
+========================== */
+
+.input-icon{
+    position:relative;
+}
+
+.input-icon i{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#666;
+}
+
+.input-icon input{
+    padding-left:48px;
+}
+
+/* ==========================
+   PRIORITAS
+========================== */
+
+.priority-group{
+    display:flex;
+    gap:10px;
+}
+
+.priority-btn{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:15px;
+    background:#F5F5F5;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.priority-btn.low.active{
+    background:#22C55E;
+    color:white;
+}
+
+.priority-btn.medium.active{
+    background:#FACC15;
+    color:white;
+}
+
+.priority-btn.high.active{
+    background:#EF4444;
+    color:white;
+}
+
+/* ==========================
+   PREVIEW
+========================== */
+
+.preview-card{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.preview-card h3{
+    color:#2563EB;
+    margin-bottom:12px;
+}
+
+.preview-card p{
+    margin:6px 0;
+    color:#666;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.save-btn{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:18px;
+    background:#2563EB;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.save-btn:hover{
+    background:#1D4ED8;
+}

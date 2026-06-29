@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMate - Jadwal Kuliah</title>
+
+    <link rel="stylesheet"
+        href="../css/schedule.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="mobile-frame">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <h1>Jadwal Kuliah</h1>
+
+        <div class="day-list">
+
+            <button class="day active">Senin</button>
+
+            <button class="day">Selasa</button>
+
+            <button class="day">Rabu</button>
+
+            <button class="day">Kamis</button>
+
+            <button class="day">Jumat</button>
+
+            <button class="day">Sabtu</button>
+
+            <button class="day">Minggu</button>
+
+        </div>
+
+    </header>
+
+
+
+        <!-- DAFTAR JADWAL -->
+
+        <div id="scheduleContainer">
+
+            <!-- schedule.js akan mengisi otomatis -->
+
+        </div>
+
+    </main>
+
+
+    <!-- FLOATING BUTTON -->
+
+    <button class="fab">
+
+        <i class="fa-solid fa-plus"></i>
+
+    </button>
+
+
+
+    <!-- MODAL HAPUS -->
+
+    <div class="modal"
+        id="deleteModal">
+
+        <div class="modal-content">
+
+            <div class="modal-icon">
+
+                <i class="fa-solid fa-trash"></i>
+
+            </div>
+
+            <h2>
+
+                Hapus Jadwal
+
+            </h2>
+
+            <p>
+
+                Apakah Anda yakin ingin menghapus jadwal ini?
+
+            </p>
+
+            <div class="modal-action">
+
+                <button class="cancel-btn">
+
+                    Batal
+
+                </button>
+
+                <button class="confirm-delete">
+
+                    Hapus
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/schedule.js"></script>
+
+</body>
+
+</html>

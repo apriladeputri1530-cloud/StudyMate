@@ -1,0 +1,781 @@
+/* =====================================================
+   STUDYMATE - DETAIL TASK
+   PART 1
+===================================================== */
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:#F4F7FC;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    min-height:100vh;
+
+    padding:18px 0;
+
+    color:#1E293B;
+
+}
+
+/* ==========================
+   MOBILE FRAME
+========================== */
+
+.mobile-frame{
+
+    width:390px;
+
+    min-height:844px;
+
+    background:#FFFFFF;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+        0 20px 45px rgba(15,23,42,.12);
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+
+    background:linear-gradient(
+        135deg,
+        #2563EB 0%,
+        #3B82F6 45%,
+        #60A5FA 100%
+    );
+
+    padding:36px 24px 28px;
+
+    border-radius:0 0 34px 34px;
+
+}
+
+/* ==========================
+   HEADER TOP
+========================== */
+
+.header-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.back-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.18);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.back-btn:hover{
+
+    background:rgba(255,255,255,.28);
+
+}
+
+.back-btn i{
+
+    font-size:16px;
+
+}
+
+.header h1{
+
+    color:#fff;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+}
+
+/* ==========================
+   BADGES
+========================== */
+
+.header-status{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:22px;
+
+}
+
+.status-badge,
+.priority-badge{
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+/* STATUS */
+
+.status-belum{
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+
+.status-selesai{
+
+    background:#DCFCE7;
+
+    color:#16A34A;
+
+}
+
+/* PRIORITY */
+
+.priority-badge{
+
+    background:rgba(255,255,255,.20);
+
+    color:#fff;
+
+}
+
+/* ==========================
+   CONTENT
+========================== */
+
+.container{
+
+    padding:22px;
+
+    padding-bottom:185px;
+
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.card{
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    margin-bottom:16px;
+
+    border:1px solid #EEF2F7;
+
+    box-shadow:
+
+        0 5px 16px rgba(15,23,42,.06);
+
+}
+
+/* ==========================
+   CARD TITLE
+========================== */
+
+.card-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:12px;
+
+    color:#94A3B8;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+}
+
+.card-title i{
+
+    width:18px;
+
+    color:#2563EB;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   TITLE
+========================== */
+
+.card h2{
+
+    font-size:21px;
+
+    font-weight:700;
+
+    color:#0F172A;
+
+    line-height:30px;
+
+}
+
+.card h3{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#111827;
+
+}
+
+.card h4{
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#111827;
+
+}
+
+/* ==========================
+   PARAGRAPH
+========================== */
+
+.card p{
+
+    font-size:14px;
+
+    line-height:26px;
+
+    color:#475569;
+
+}
+
+/* ==========================
+   PRIORITY BOX
+========================== */
+
+.priority{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 16px;
+
+    border-radius:40px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* HIGH */
+
+.priority.high{
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+
+/* MEDIUM */
+
+.priority.medium{
+
+    background:#FEF3C7;
+
+    color:#D97706;
+
+}
+
+/* LOW */
+
+.priority.low{
+
+    background:#DCFCE7;
+
+    color:#16A34A;
+
+}
+
+/* ==========================
+   DEADLINE
+========================== */
+
+.deadline-time{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:12px;
+
+    color:#64748B;
+
+    font-size:14px;
+
+}
+
+.deadline-time i{
+
+    color:#2563EB;
+
+    font-size:15px;
+
+}
+
+/* =====================================================
+   ACTION BUTTON
+===================================================== */
+
+.action-buttons{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:390px;
+
+    background:#FFFFFF;
+
+    padding:18px 22px 28px;
+
+    border-top:1px solid #E5E7EB;
+
+    box-shadow:0 -8px 25px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    z-index:100;
+
+}
+
+.action-buttons button{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:16px;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+.action-buttons i{
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   COMPLETE
+========================== */
+
+.complete-btn{
+
+    background:#22C55E;
+
+    color:#fff;
+
+    box-shadow:0 8px 20px rgba(34,197,94,.28);
+
+}
+
+.complete-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#16A34A;
+
+}
+
+/* ==========================
+   EDIT
+========================== */
+
+.edit-btn{
+
+    background:#2563EB;
+
+    color:#fff;
+
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+
+}
+
+.edit-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#1D4ED8;
+
+}
+
+/* ==========================
+   DELETE
+========================== */
+
+.delete-btn{
+
+    background:#FEF2F2;
+
+    color:#DC2626;
+
+    border:1px solid #FECACA !important;
+
+}
+
+.delete-btn:hover{
+
+    background:#FEE2E2;
+
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.45);
+
+    backdrop-filter:blur(4px);
+
+    z-index:999;
+
+}
+
+.modal.show{
+
+    display:flex;
+
+}
+
+.modal-content{
+
+    width:330px;
+
+    background:#FFFFFF;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    text-align:center;
+
+    animation:popup .28s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px) scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+.modal-icon{
+
+    width:72px;
+
+    height:72px;
+
+    margin:auto;
+
+    margin-bottom:18px;
+
+    border-radius:50%;
+
+    background:#FEE2E2;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#DC2626;
+
+    font-size:28px;
+
+}
+
+.modal-content h2{
+
+    font-size:22px;
+
+    color:#111827;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+
+}
+
+.modal-content p{
+
+    color:#64748B;
+
+    line-height:24px;
+
+    font-size:14px;
+
+    margin-bottom:24px;
+
+}
+
+.modal-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.modal-buttons button{
+
+    flex:1;
+
+    height:48px;
+
+    border-radius:14px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    font-family:"Poppins",sans-serif;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.cancel-btn{
+
+    border:1px solid #CBD5E1;
+
+    background:#FFFFFF;
+
+    color:#334155;
+
+}
+
+.cancel-btn:hover{
+
+    background:#F8FAFC;
+
+}
+
+.confirm-delete{
+
+    border:none;
+
+    background:#EF4444;
+
+    color:#fff;
+
+}
+
+.confirm-delete:hover{
+
+    background:#DC2626;
+
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#CBD5E1;
+
+    border-radius:50px;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:420px){
+
+body{
+
+    padding:0;
+
+    background:#fff;
+
+}
+
+.mobile-frame{
+
+    width:100%;
+
+    min-height:100vh;
+
+    border-radius:0;
+
+    box-shadow:none;
+
+}
+
+.header{
+
+    padding:42px 20px 28px;
+
+}
+
+.container{
+
+    padding:18px;
+
+    padding-bottom:185px;
+
+}
+
+.action-buttons{
+
+    width:100%;
+
+    left:0;
+
+    transform:none;
+
+    padding:16px 18px 24px;
+
+}
+
+.modal-content{
+
+    width:90%;
+
+}
+
+}

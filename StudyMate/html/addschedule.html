@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Jadwal Kuliah - StudyMate</title>
+
+    <link rel="stylesheet" href="../css/addschedule.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <button class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <h1>Tambah Jadwal Kuliah</h1>
+
+        </header>
+
+        <!-- Form -->
+        <form id="scheduleForm">
+
+            <!-- Mata Kuliah -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-solid fa-book-open"></i>
+                    Nama Mata Kuliah
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Contoh : Interaksi Manusia dan Komputer"
+                    required>
+
+            </div>
+
+            <!-- Hari -->
+            <div class="form-group">
+
+                <label>Hari</label>
+
+                <select id="day">
+
+                    <option>Senin</option>
+                    <option>Selasa</option>
+                    <option>Rabu</option>
+                    <option>Kamis</option>
+                    <option>Jumat</option>
+                    <option>Sabtu</option>
+                    <option>Minggu</option>
+
+                </select>
+
+            </div>
+
+            <!-- Jam Mulai -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-regular fa-clock"></i>
+                    Jam Mulai
+                </label>
+
+                <input
+                    type="time"
+                    id="startTime"
+                    value="08:00"
+                    required>
+
+            </div>
+
+            <!-- Jam Selesai -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-regular fa-clock"></i>
+                    Jam Selesai
+                </label>
+
+                <input
+                    type="time"
+                    id="endTime"
+                    value="10:00"
+                    required>
+
+            </div>
+
+            <!-- Ruangan -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Ruangan
+                </label>
+
+                <input
+                    type="text"
+                    id="room"
+                    placeholder="Contoh : Lab Komputer 1"
+                    required>
+
+            </div>
+
+            <!-- Dosen -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-solid fa-user"></i>
+                    Nama Dosen
+                </label>
+
+                <input
+                    type="text"
+                    id="lecturer"
+                    placeholder="Contoh : Dr. Ahmad Fauzi">
+
+            </div>
+
+            <!-- Preview -->
+            <div class="preview-card" id="previewCard">
+
+                <h3>Pratinjau</h3>
+
+                <p id="previewSubject">
+                    Nama Mata Kuliah
+                </p>
+
+                <p id="previewSchedule">
+                    Senin • 08:00 - 10:00
+                </p>
+
+                <p id="previewRoom">
+                    Ruangan
+                </p>
+
+                <p id="previewLecturer">
+                    Nama Dosen
+                </p>
+
+            </div>
+
+            <!-- Tombol -->
+            <button
+                type="submit"
+                class="save-btn">
+
+                Simpan Jadwal
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="../js/addschedule.js"></script>
+
+</body>
+
+</html>

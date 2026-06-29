@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Tugas - StudyMate</title>
+
+    <link rel="stylesheet" href="../css/tasklist.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="phone">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <h1>Daftar Tugas</h1>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari tugas atau mata kuliah...">
+            </div>
+
+            <div class="filter-group">
+
+                <button class="filter-btn active">
+                    Semua
+                </button>
+
+                <button class="filter-btn">
+                    Belum Selesai
+                </button>
+
+                <button class="filter-btn">
+                    Selesai
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- CONTENT -->
+        <main class="content">
+
+            <p class="task-count">
+                0 tugas ditemukan
+            </p>
+
+            <!-- Semua task akan dirender otomatis -->
+            <div id="taskContainer"></div>
+
+            <button class="show-all">
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+                Lihat Semua Tugas
+
+            </button>
+
+        </main>
+
+        <!-- Floating Button -->
+        <button
+            class="fab"
+            id="addTaskBtn"
+            onclick="window.location.href='addtask.html'">
+
+            <i class="fa-solid fa-plus"></i>
+
+        </button>
+
+        <!-- Modal Hapus -->
+        <div
+            class="modal"
+            id="deleteModal">
+
+            <div class="modal-box">
+
+                <div class="modal-icon">
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+
+                <h3>Hapus Tugas</h3>
+
+                <p>
+                    Apakah Anda yakin ingin menghapus tugas ini?
+                </p>
+
+                <div class="modal-button">
+
+                    <button class="cancel-btn">
+                        Batal
+                    </button>
+
+                    <button class="confirm-btn">
+                        Hapus
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+
+            <a href="dashboard.html" class="nav-item">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Beranda</span>
+
+            </a>
+
+            <a href="tasklist.html" class="nav-item active">
+
+                <i class="fa-regular fa-square-check"></i>
+
+                <span>Tugas</span>
+
+            </a>
+
+            <a href="calendar.html" class="nav-item">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <span>Kalender</span>
+
+            </a>
+
+            <a href="profil.html" class="nav-item">
+
+                <i class="fa-regular fa-user"></i>
+
+                <span>Profil</span>
+
+            </a>
+
+        </nav>
+
+    </div>
+
+    <script src="../js/tasklist.js"></script>
+
+</body>
+
+</html>

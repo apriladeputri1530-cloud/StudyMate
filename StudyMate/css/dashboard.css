@@ -1,0 +1,389 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    background:#DCE1EA;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+}
+
+/* ==========================
+   MOBILE FRAME
+========================== */
+
+.phone{
+    width:390px;
+    height:100vh;
+    background:#F8FAFC;
+    position:relative;
+    overflow-y:auto;
+    overflow-x:hidden;
+    box-shadow:0 0 25px rgba(0,0,0,.12);
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+    background:linear-gradient(135deg,#2563EB,#60A5FA);
+    padding:40px 24px 90px;
+    border-radius:0 0 30px 30px;
+}
+
+.header h1{
+    color:#fff;
+    font-size:24px;
+    font-weight:700;
+}
+
+.header p{
+    color:rgba(255,255,255,.9);
+    font-size:14px;
+    margin-top:6px;
+}
+
+/* ==========================
+   CONTENT
+========================== */
+
+.container{
+    margin-top:-60px;
+    padding:0 20px 110px;
+}
+
+/* ==========================
+   STATISTICS
+========================== */
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:28px;
+}
+
+.stat-card{
+    background:#fff;
+    border-radius:22px;
+    padding:22px;
+    text-align:left;
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+.stat-icon{
+    width:56px;
+    height:56px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.stat-icon.blue{
+    background:#DBEAFE;
+    color:#2563EB;
+}
+
+.stat-icon.light{
+    background:#E0F2FE;
+    color:#3B82F6;
+}
+
+.stat-icon i{
+    font-size:22px;
+}
+
+.stat-card h2{
+    font-size:34px;
+    font-weight:700;
+    color:#111827;
+}
+
+.stat-card p{
+    color:#64748B;
+    font-size:14px;
+}
+
+/* ==========================
+   SECTION
+========================== */
+
+.section{
+    margin-bottom:28px;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+}
+
+.section-header h2{
+    font-size:24px;
+    font-weight:700;
+    color:#0F172A;
+}
+
+.link-btn{
+    border:none;
+    background:none;
+    color:#2563EB;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+}
+
+/* ==========================
+   SCHEDULE CARD
+========================== */
+
+.card{
+    background:#fff;
+    border-radius:18px;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.card-icon{
+    width:54px;
+    height:54px;
+    border-radius:16px;
+    background:#2563EB;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.card-icon i{
+    font-size:20px;
+}
+
+.card-content h3{
+    font-size:17px;
+    font-weight:600;
+    color:#111827;
+}
+
+.card-content p{
+    margin-top:5px;
+    color:#64748B;
+    font-size:13px;
+}
+
+/* ==========================
+   TASK CARD
+========================== */
+
+.task-card{
+    background:#fff;
+    border-radius:18px;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.task-left h3{
+    font-size:16px;
+    font-weight:600;
+}
+
+.task-left p{
+    font-size:13px;
+    color:#64748B;
+    margin-top:3px;
+}
+
+.task-right{
+    text-align:right;
+}
+
+.task-right small{
+    display:block;
+    margin-top:6px;
+    color:#64748B;
+}
+
+.badge{
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.badge.high{
+    background:#FEE2E2;
+    color:#DC2626;
+}
+
+.badge.medium{
+    background:#FEF3C7;
+    color:#D97706;
+}
+
+/* ==========================
+   EVENT CARD
+========================== */
+
+.event-card{
+    background:#fff;
+    border-radius:18px;
+    padding:18px;
+    display:flex;
+    gap:14px;
+    align-items:center;
+    margin-bottom:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.event-icon{
+    width:50px;
+    height:50px;
+    border-radius:15px;
+    background:#DBEAFE;
+    color:#2563EB;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.event-content h3{
+    font-size:16px;
+    font-weight:600;
+}
+
+.event-content p{
+    color:#64748B;
+    font-size:13px;
+    margin-top:4px;
+}
+
+/* ==========================
+   QUICK ACCESS
+========================== */
+
+.quick-title{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:16px;
+}
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.quick-btn{
+    border:none;
+    border-radius:18px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.quick-btn i{
+    font-size:24px;
+}
+
+.quick-btn.blue{
+    background:#2563EB;
+    color:#fff;
+}
+
+.quick-btn.light{
+    background:#DBEAFE;
+    color:#2563EB;
+}
+
+/* ==========================
+   BOTTOM NAVIGATION
+========================== */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:390px;
+    height:82px;
+
+    background:#fff;
+    border-top:1px solid #E5E7EB;
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    box-shadow:0 -2px 12px rgba(0,0,0,.05);
+    z-index:999;
+}
+
+.nav-item{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+
+    text-decoration:none;
+    color:#6B7280;
+
+    font-size:12px;
+    font-weight:500;
+}
+
+.nav-item i{
+    font-size:24px;
+}
+
+.nav-item.active{
+    color:#2563EB;
+}
+
+.nav-item.active i{
+    color:#2563EB;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:390px){
+
+.phone{
+    width:100%;
+    box-shadow:none;
+}
+
+.bottom-nav{
+    width:100%;
+}
+
+}

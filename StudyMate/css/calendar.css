@@ -1,0 +1,560 @@
+/* ==================================================
+   STUDYMATE - CALENDAR
+================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    background:#E9EDF5;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+}
+
+/* ==================================================
+   MOBILE FRAME
+================================================== */
+
+.mobile-frame{
+    width:390px;
+    min-height:100vh;
+    background:#F8FAFC;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(0,0,0,.12);
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header{
+    height:170px;
+    background:linear-gradient(135deg,#2563EB,#60A5FA);
+    border-radius:0 0 32px 32px;
+    padding:45px 24px;
+}
+
+.header h1{
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+}
+
+/* ==================================================
+   CALENDAR
+================================================== */
+
+.calendar-section{
+    margin-top:-70px;
+    padding:0 18px;
+    position:relative;
+    z-index:5;
+}
+
+.calendar-card{
+    background:#fff;
+    border-radius:22px;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* ==================================================
+   MONTH HEADER
+================================================== */
+
+.calendar-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.calendar-header h2{
+    font-size:20px;
+    font-weight:700;
+    color:#111827;
+}
+
+.month-btn{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:12px;
+    background:#EEF4FF;
+    color:#2563EB;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.month-btn:hover{
+    background:#2563EB;
+    color:#fff;
+}
+
+/* ==================================================
+   WEEK DAYS
+================================================== */
+
+.weekdays{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    margin-bottom:14px;
+}
+
+.weekdays span{
+    text-align:center;
+    font-size:12px;
+    color:#94A3B8;
+    font-weight:600;
+}
+
+/* ==================================================
+   CALENDAR GRID
+================================================== */
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:8px;
+}
+
+.calendar-grid .empty-day{
+    width:42px;
+    height:42px;
+}
+
+.calendar-grid .day{
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:500;
+    color:#1E293B;
+    transition:.25s;
+    position:relative;
+}
+
+.calendar-grid .day:hover{
+    background:#EEF4FF;
+}
+
+.today{
+    background:#2563EB;
+    color:#fff !important;
+    font-weight:700;
+}
+
+.selected{
+    background:#DBEAFE;
+    color:#2563EB !important;
+    font-weight:700;
+}
+
+.has-event::after{
+    content:"";
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:#22C55E;
+    border-radius:50%;
+    bottom:5px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.content{
+    padding:22px 18px 120px;
+}
+
+.content-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.content-header h2{
+    font-size:22px;
+    font-weight:700;
+    color:#111827;
+}
+
+.add-event-text{
+    border:none;
+    background:#EEF4FF;
+    color:#2563EB;
+    padding:10px 15px;
+    border-radius:12px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.add-event-text:hover{
+    background:#2563EB;
+    color:#fff;
+}
+
+/* ==================================================
+   LEGEND
+================================================== */
+
+.legend{
+    display:flex;
+    gap:18px;
+    margin-bottom:22px;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    color:#64748B;
+}
+
+.legend-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+}
+
+.legend-dot.tugas{
+    background:#EF4444;
+}
+
+.legend-dot.ujian{
+    background:#F59E0B;
+}
+
+.legend-dot.event{
+    background:#22C55E;
+}
+
+/* ======================================================
+   EVENT LIST
+====================================================== */
+
+.event-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.event-card{
+    background:#fff;
+    border-radius:18px;
+    padding:16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    transition:.25s;
+}
+
+.event-card:hover{
+    transform:translateY(-2px);
+}
+
+.event-left{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    margin-top:6px;
+    flex-shrink:0;
+}
+
+.dot.tugas{
+    background:#EF4444;
+}
+
+.dot.ujian{
+    background:#F59E0B;
+}
+
+.dot.event{
+    background:#22C55E;
+}
+
+.event-info h3{
+    font-size:15px;
+    color:#111827;
+    font-weight:600;
+    margin-bottom:4px;
+}
+
+.event-info p{
+    font-size:13px;
+    color:#64748B;
+    margin-bottom:3px;
+}
+
+.event-info small{
+    color:#94A3B8;
+    font-size:12px;
+}
+
+.event-action{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.badge{
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:600;
+}
+
+.badge.tugas{
+    background:#FEE2E2;
+    color:#DC2626;
+}
+
+.badge.ujian{
+    background:#FEF3C7;
+    color:#D97706;
+}
+
+.badge.event{
+    background:#DCFCE7;
+    color:#16A34A;
+}
+
+.delete-btn{
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:12px;
+    background:#FEF2F2;
+    color:#DC2626;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.delete-btn:hover{
+    background:#DC2626;
+    color:#fff;
+}
+
+/* ======================================================
+   EMPTY STATE
+====================================================== */
+
+.empty-state{
+    display:none;
+    text-align:center;
+    background:#fff;
+    padding:35px 20px;
+    border-radius:18px;
+    margin-top:20px;
+    box-shadow:0 8px 18px rgba(0,0,0,.05);
+}
+
+.empty-state p{
+    color:#64748B;
+    margin-bottom:18px;
+}
+
+.empty-btn{
+    border:none;
+    background:#2563EB;
+    color:#fff;
+    padding:12px 24px;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* ======================================================
+   FLOATING BUTTON
+====================================================== */
+
+.floating-btn{
+    position:fixed;
+    bottom:95px;
+    left:50%;
+    transform:translateX(145px);
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:50%;
+    background:#2563EB;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 12px 25px rgba(37,99,235,.35);
+    z-index:999;
+}
+
+.floating-btn:hover{
+    transform:translateX(145px) scale(1.05);
+}
+
+/* ======================================================
+   MODAL
+====================================================== */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-content{
+    width:320px;
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+}
+
+.modal-icon{
+    width:64px;
+    height:64px;
+    margin:auto;
+    background:#FEE2E2;
+    color:#DC2626;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.modal-content h3{
+    margin-bottom:8px;
+    color:#111827;
+}
+
+.modal-content p{
+    color:#6B7280;
+    margin-bottom:22px;
+    font-size:14px;
+}
+
+.modal-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.cancel-btn,
+.confirm-btn{
+    flex:1;
+    height:46px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.cancel-btn{
+    background:#F3F4F6;
+}
+
+.confirm-btn{
+    background:#EF4444;
+    color:#fff;
+}
+
+/* ======================================================
+   BOTTOM NAVIGATION
+====================================================== */
+
+.bottom-nav{
+    position:fixed;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:390px;
+    height:78px;
+    background:#fff;
+    border-top:1px solid #E5E7EB;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    box-shadow:0 -4px 15px rgba(0,0,0,.06);
+    z-index:999;
+}
+
+.nav-item{
+    flex:1;
+    text-decoration:none;
+    color:#6B7280;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:4px;
+    font-size:12px;
+    font-weight:500;
+}
+
+.nav-item i{
+    font-size:22px;
+}
+
+.nav-item.active{
+    color:#2563EB;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:430px){
+
+    .mobile-frame{
+        width:100%;
+    }
+
+    .bottom-nav{
+        width:100%;
+    }
+
+    .floating-btn{
+        right:20px;
+        left:auto;
+        transform:none;
+    }
+
+    .floating-btn:hover{
+        transform:scale(1.05);
+    }
+
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Tugas - StudyMate</title>
+
+    <link rel="stylesheet" href="../css/addtask.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="header">
+
+        <button class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <h1>Tambah Tugas</h1>
+
+    </div>
+
+    <div class="container">
+
+        <form id="taskForm">
+
+            <!-- Nama Tugas -->
+            <div class="form-group">
+                <label>Nama Tugas</label>
+                <input
+                    type="text"
+                    id="taskName"
+                    placeholder="Contoh : Laporan Praktikum"
+                    required>
+            </div>
+
+            <!-- Mata Kuliah -->
+            <div class="form-group">
+                <label>Mata Kuliah</label>
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Contoh : Interaksi Manusia dan Komputer"
+                    required>
+            </div>
+
+            <!-- Deskripsi -->
+            <div class="form-group">
+                <label>Deskripsi</label>
+
+                <textarea
+                    id="description"
+                    rows="4"
+                    placeholder="Jelaskan detail tugas..."></textarea>
+            </div>
+
+            <!-- Prioritas -->
+            <div class="form-group">
+
+                <label>Prioritas</label>
+
+                <div class="priority-group">
+
+                    <button
+                        type="button"
+                        class="priority-btn low">
+                        Rendah
+                    </button>
+
+                    <button
+                        type="button"
+                        class="priority-btn medium active">
+                        Sedang
+                    </button>
+
+                    <button
+                        type="button"
+                        class="priority-btn high">
+                        Tinggi
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Deadline -->
+            <div class="form-group">
+
+                <label>Pilih Tanggal Deadline</label>
+
+                <div class="input-icon">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <input
+                        type="date"
+                        id="deadlineDate">
+
+                </div>
+
+            </div>
+
+            <!-- Waktu -->
+            <div class="form-group">
+
+                <label>Pilih Waktu Deadline</label>
+
+                <div class="input-icon">
+
+                    <i class="fa-regular fa-clock"></i>
+
+                    <input
+                        type="time"
+                        id="deadlineTime">
+
+                </div>
+
+            </div>
+
+            <!-- Preview -->
+            <div class="preview-card">
+
+                <h3>Preview Tugas</h3>
+
+                <p id="previewName">
+                    Nama Tugas
+                </p>
+
+                <p id="previewSubject">
+                    Mata Kuliah
+                </p>
+
+                <p id="previewPriority">
+                    Prioritas
+                </p>
+
+                <p id="previewDeadline">
+                    Deadline
+                </p>
+
+                <p id="previewDescription">
+                    Deskripsi
+                </p>
+
+            </div>
+
+            <button
+                type="submit"
+                class="save-btn">
+
+                Simpan
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="../js/addtask.js"></script>
+
+</body>
+
+</html>

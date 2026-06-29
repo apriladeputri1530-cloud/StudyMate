@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Jadwal Kuliah - StudyMate</title>
+
+    <link rel="stylesheet" href="../css/editschedule.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- MOBILE FRAME -->
+    <div class="mobile-frame">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div class="header-top">
+
+                <button class="back-btn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+
+                <h1>Edit Jadwal Kuliah</h1>
+
+            </div>
+
+        </header>
+
+        <!-- CONTENT -->
+        <main class="container">
+
+            <!-- Mata Kuliah -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-solid fa-book-open"></i>
+                    Nama Mata Kuliah
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Contoh: Interaksi Manusia dan Komputer"
+                    value="Interaksi Manusia dan Komputer">
+
+            </div>
+
+            <!-- Hari -->
+            <div class="form-group">
+
+                <label>Hari</label>
+
+                <div class="select-box">
+
+                    <select id="day">
+
+                        <option>Senin</option>
+                        <option>Selasa</option>
+                        <option>Rabu</option>
+                        <option selected>Kamis</option>
+                        <option>Jumat</option>
+                        <option>Sabtu</option>
+                        <option>Minggu</option>
+
+                    </select>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+            <!-- =========================JAM MULAI========================= -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-regular fa-clock"></i>
+                    Jam Mulai
+                </label>
+
+            <button type="button"
+                class="time-input"
+                id="startTimeBtn">
+
+                <span id="startTimeText">
+                    08:00
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+    <!-- Time Picker -->
+    <div class="time-picker" id="startPicker">
+
+        <div class="picker-wrapper">
+
+            <!-- Jam -->
+            <div class="picker-column">
+
+                <h4>Jam</h4>
+
+                <div class="picker-list hour-list">
+
+                    <!-- JS -->
+
+                </div>
+
+            </div>
+
+            <!-- Menit -->
+            <div class="picker-column">
+
+                <h4>Menit</h4>
+
+                <div class="picker-list minute-list">
+
+                    <!-- JS -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="picker-confirm">
+
+            Pilih Waktu
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     JAM SELESAI
+========================= -->
+<div class="form-group">
+
+    <label>
+        <i class="fa-regular fa-clock"></i>
+        Jam Selesai
+    </label>
+
+    <button
+        type="button"
+        class="time-input"
+        id="endTimeBtn">
+
+        <span id="endTimeText">
+            10:00
+        </span>
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+    </button>
+
+    <!-- Time Picker -->
+    <div class="time-picker" id="endPicker">
+
+        <div class="picker-wrapper">
+
+            <!-- Jam -->
+            <div class="picker-column">
+
+                <h4>Jam</h4>
+
+                <div class="picker-list hour-list">
+
+                </div>
+
+            </div>
+
+            <!-- Menit -->
+            <div class="picker-column">
+
+                <h4>Menit</h4>
+
+                <div class="picker-list minute-list">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="picker-confirm">
+
+            Pilih Waktu
+
+        </button>
+
+    </div>
+
+</div>
+
+            <!-- Ruangan -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Ruangan
+                </label>
+
+                <input
+                    type="text"
+                    id="room"
+                    value="Lab Komputer 1">
+
+            </div>
+
+            <!-- Dosen -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-solid fa-user"></i>
+                    Nama Dosen
+                </label>
+
+                <input
+                    type="text"
+                    id="lecturer"
+                    value="Dr. Ahmad Fauzi">
+
+            </div>
+
+            <!-- Button -->
+            <button type="submit" class="save-btn">
+                Simpan Perubahan
+            </button>
+
+        </main>
+
+    </div>
+
+    <script src="../js/editschedule.js"></script>
+
+</body>
+
+</html>

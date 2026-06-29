@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Event - StudyMate</title>
+
+<link rel="stylesheet" href="../css/addevent.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <button class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <h1>Tambah Event</h1>
+
+        </header>
+
+        <!-- Form -->
+
+        <form id="eventForm">
+
+            <!-- Nama Event -->
+
+            <div class="form-group">
+
+                <label>Nama Event</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Contoh : Seminar Nasional IT"
+                    required>
+
+            </div>
+
+            <!-- Jenis Event -->
+
+            <div class="form-group">
+
+                <label>Tipe Event</label>
+
+                <div class="type-container">
+
+                    <button
+                        type="button"
+                        class="type-btn active"
+                        data-type="event">
+
+                        Event
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="type-btn"
+                        data-type="ujian">
+
+                        Ujian
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="type-btn"
+                        data-type="tugas">
+
+                        Tugas
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Tanggal -->
+
+            <div class="form-group">
+
+                <label>Tanggal Event</label>
+
+                <div class="input-icon">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required>
+
+                </div>
+
+            </div>
+
+            <!-- Waktu -->
+
+            <div class="form-group">
+
+                <label>Waktu Event</label>
+
+                <div class="input-icon">
+
+                    <i class="fa-regular fa-clock"></i>
+
+                    <input
+                        type="time"
+                        id="time"
+                        required>
+
+                </div>
+
+            </div>
+
+            <!-- Lokasi -->
+
+            <div class="form-group">
+
+                <label>Lokasi</label>
+
+                <div class="input-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Contoh : Auditorium Kampus"
+                        required>
+
+                </div>
+
+            </div>
+
+            <!-- Deskripsi -->
+
+            <div class="form-group">
+
+                <label>Deskripsi</label>
+
+                <textarea
+                    id="description"
+                    rows="5"
+                    placeholder="Jelaskan detail event..."></textarea>
+
+            </div>
+
+            <!-- Preview -->
+
+            <div class="preview-card">
+
+                <h3>Pratinjau Event</h3>
+
+                <p id="previewName">
+                    Nama Event
+                </p>
+
+                <p id="previewDate">
+                    Tanggal Event
+                </p>
+
+                <p id="previewTime">
+                    Waktu
+                </p>
+
+                <p id="previewLocation">
+                    Lokasi
+                </p>
+
+                <p id="previewDescription">
+                    Deskripsi Event
+                </p>
+
+            </div>
+
+            <!-- Tombol -->
+
+            <button
+                type="submit"
+                class="save-btn">
+
+                Simpan Event
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="../js/addevent.js"></script>
+
+</body>
+
+</html>

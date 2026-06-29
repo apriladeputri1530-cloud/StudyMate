@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Tugas - StudyMate</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/detailtask.css">
+</head>
+
+<body>
+
+<div class="mobile-frame">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="header-top">
+
+            <button class="back-btn" onclick="history.back()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <h1>Detail Tugas</h1>
+
+        </div>
+
+        <div class="header-status">
+
+            <span class="status-badge" id="taskStatus">
+                Belum Selesai
+            </span>
+
+            <span class="priority-badge" id="taskPriorityBadge">
+                Sedang
+            </span>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CONTENT ================= -->
+
+    <main class="container">
+
+        <!-- Nama -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>Nama Tugas</span>
+
+            </div>
+
+            <h2 id="taskName">
+                Nama Tugas
+            </h2>
+
+        </div>
+
+        <!-- Mata Kuliah -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-book"></i>
+
+                <span>Mata Kuliah</span>
+
+            </div>
+
+            <p id="taskSubject">
+                Mata Kuliah
+            </p>
+
+        </div>
+
+        <!-- Deskripsi -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-align-left"></i>
+
+                <span>Deskripsi</span>
+
+            </div>
+
+            <p id="taskDescription">
+                Tidak ada deskripsi.
+            </p>
+
+        </div>
+
+        <!-- Prioritas -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-flag"></i>
+
+                <span>Prioritas</span>
+
+            </div>
+
+            <span id="taskPriority" class="priority">
+                Sedang
+            </span>
+
+        </div>
+
+        <!-- Deadline -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span>Deadline</span>
+
+            </div>
+
+            <h3 id="taskDate">
+                -
+            </h3>
+
+            <div class="deadline-time">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <span id="taskTime">
+                    -
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ================= ACTION ================= -->
+
+    <div class="action-buttons">
+
+        <button class="complete-btn" id="completeBtn">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Tandai Selesai
+
+        </button>
+
+        <button class="edit-btn" id="editBtn">
+
+            <i class="fa-solid fa-pen"></i>
+
+            Edit Tugas
+
+        </button>
+
+        <button class="delete-btn" id="deleteBtn">
+
+            <i class="fa-solid fa-trash"></i>
+
+            Hapus Tugas
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="deleteModal">
+
+    <div class="modal-content">
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-trash"></i>
+
+        </div>
+
+        <h2>Hapus Tugas</h2>
+
+        <p>
+            Apakah Anda yakin ingin menghapus tugas ini?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button class="cancel-btn">
+                Batal
+            </button>
+
+            <button class="confirm-delete">
+                Hapus
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/detailtask.js"></script>
+
+</body>
+</html>

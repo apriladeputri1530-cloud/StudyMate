@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StudyMate</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="phone">
+
+        <!-- HEADER -->
+        <header class="header">
+
+    <h1>
+
+        Selamat Siang,
+
+        <span id="username">
+
+            Pengguna
+
+        </span>
+
+        👋
+
+    </h1>
+
+    <p>
+
+        Semangat belajar hari ini!
+
+    </p>
+
+</header>
+
+        <!-- CONTENT -->
+        <!-- CONTENT -->
+<main class="container">
+
+    <!-- Statistik -->
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+
+                <i class="fa-solid fa-square-check"></i>
+
+            </div>
+
+            <h2 id="totalTask">0</h2>
+
+            <p>Tugas Aktif</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-icon light">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+            </div>
+
+            <h2 id="todayEvent">0</h2>
+
+            <p>Event Hari Ini</p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Jadwal -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2>Jadwal Hari Ini</h2>
+
+            <button class="link-btn" id="scheduleBtn">
+
+                Lihat Semua
+
+            </button>
+
+        </div>
+
+        <div id="scheduleContainer">
+
+            <div class="empty">
+
+                Belum ada jadwal
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Deadline -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2>Deadline Terdekat</h2>
+
+            <button class="link-btn" id="taskBtn">
+
+                Lihat Semua
+
+            </button>
+
+        </div>
+
+        <div id="taskContainer">
+
+            <div class="empty">
+
+                Belum ada tugas
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Event -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2>Event Terdekat</h2>
+
+            <button class="link-btn" id="eventBtn">
+
+                Lihat Semua
+
+            </button>
+
+        </div>
+
+        <div id="eventContainer">
+
+            <div class="empty">
+
+                Belum ada event
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Quick Access -->
+
+    <section class="section">
+
+        <h2 class="quick-title">
+
+            Akses Cepat
+
+        </h2>
+
+        <div class="quick-grid">
+
+            <button class="quick-btn blue">
+
+                <i class="fa-solid fa-plus"></i>
+
+                <span>
+
+                    Tambah Tugas
+
+                </span>
+
+            </button>
+
+            <button class="quick-btn light">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span>
+
+                    Kalender
+
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+
+            <a href="dashboard.html" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Beranda</span>
+            </a>
+
+            <a href="tasklist.html" class="nav-item">
+                <i class="fa-regular fa-square-check"></i>
+                <span>Tugas</span>
+            </a>
+
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Kalender</span>
+            </a>
+
+            <a href="profil.html" class="nav-item">
+                <i class="fa-regular fa-user"></i>
+                <span>Profil</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

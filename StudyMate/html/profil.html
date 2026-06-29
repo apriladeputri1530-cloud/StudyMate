@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya - StudyMate</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/profil.css">
+</head>
+<body>
+
+<div class="mobile-frame">
+
+    <!-- HEADER -->
+    <header class="profile-header">
+
+        <h2>Profil Saya</h2>
+
+        <div class="profile-info">
+
+            <div class="avatar" id="avatarInitial">
+                MH
+            </div>
+
+            <div class="user-detail">
+                <h3 id="displayName">
+                    Mahasiswa
+                </h3>
+
+                <p id="displayProgram">
+                    Program Studi
+                </p>
+
+                <span id="displayEmail">
+                    email@kampus.ac.id
+                </span>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- CONTENT -->
+    <main class="container">
+
+        <!-- CARD EDIT -->
+        <div class="card">
+
+            <h3>Edit Informasi</h3>
+
+            <!-- Nama -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-solid fa-user"></i>
+                    Nama Lengkap
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Masukkan nama lengkap">
+
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-solid fa-envelope"></i>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="email@kampus.ac.id">
+
+            </div>
+
+            <!-- Program Studi -->
+            <div class="form-group">
+
+                <label>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Program Studi
+                </label>
+
+                <input
+                    type="text"
+                    id="program"
+                    placeholder="Contoh : Teknik Informatika">
+
+            </div>
+
+            <button
+                class="save-btn"
+                id="saveBtn">
+                Simpan Perubahan
+            </button>
+
+        </div>
+
+        <!-- MENU -->
+        <div class="menu-list">
+
+            <button
+                class="menu-item"
+                id="reminderBtn">
+
+                <div class="menu-left">
+
+                    <div class="menu-icon blue">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <span>
+                        Pengaturan Pengingat
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+
+            <button
+                class="menu-item logout"
+                id="logoutBtn">
+
+                <div class="menu-left">
+
+                    <div class="menu-icon red">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </div>
+
+                    <span>
+                        Keluar
+                    </span>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+
+        <a href="dashboard.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Beranda</span>
+        </a>
+
+        <a href="tasklist.html" class="nav-item">
+            <i class="fa-regular fa-square-check"></i>
+            <span>Tugas</span>
+        </a>
+
+        <a href="calendar.html" class="nav-item">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Kalender</span>
+        </a>
+
+        <a href="profil.html" class="nav-item active">
+            <i class="fa-regular fa-user"></i>
+            <span>Profil</span>
+        </a>
+
+    </nav>
+
+</div>
+
+<script src="../js/profil.js"></script>
+
+</body>
+</html>

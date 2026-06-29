@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event - StudyMate</title>
+
+    <link rel="stylesheet" href="../css/editevent.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="header-top">
+
+            <button class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <h1>Edit Event</h1>
+
+            <button class="delete-header">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+    <main class="container">
+
+        <form id="eventForm">
+
+            <!-- Nama -->
+            <div class="form-group">
+
+                <label>Nama Event</label>
+
+                <input
+                    type="text"
+                    id="eventName"
+                    placeholder="Contoh : Seminar Nasional IT">
+
+            </div>
+
+
+            <!-- Tipe -->
+            <div class="form-group">
+
+                <label>Tipe Event</label>
+
+                <div class="type-group">
+
+                    <button type="button" class="type-btn active event">
+                        Event
+                    </button>
+
+                    <button type="button" class="type-btn exam">
+                        Ujian
+                    </button>
+
+                    <button type="button" class="type-btn task">
+                        Tugas
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tanggal -->
+            <div class="form-group">
+
+                <label>Tanggal Event</label>
+
+                <div class="input-icon">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <input type="date" id="eventDate">
+
+                </div>
+
+            </div>
+
+
+            <!-- Waktu -->
+            <div class="form-group">
+
+                <label>Waktu Event</label>
+
+                <div class="input-icon">
+
+                    <i class="fa-regular fa-clock"></i>
+
+                    <input type="time" id="eventTime">
+
+                </div>
+
+            </div>
+
+
+            <!-- Lokasi -->
+            <div class="form-group">
+
+                <label>Lokasi</label>
+
+                <div class="input-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <input
+                        type="text"
+                        id="eventLocation"
+                        placeholder="Contoh : Auditorium Kampus">
+
+                </div>
+
+            </div>
+
+
+            <!-- Deskripsi -->
+            <div class="form-group">
+
+                <label>Deskripsi</label>
+
+                <textarea
+                    id="description"
+                    rows="4"
+                    placeholder="Jelaskan detail event..."></textarea>
+
+            </div>
+
+
+            <!-- Tombol -->
+            <button class="save-btn">
+
+                Simpan Perubahan
+
+            </button>
+
+        </form>
+
+    </main>
+
+</div>
+
+
+<!-- MODAL -->
+<div class="modal" id="deleteModal">
+
+    <div class="modal-content">
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-trash"></i>
+
+        </div>
+
+        <h3>Hapus Event?</h3>
+
+        <p>
+            Apakah Anda yakin ingin menghapus event ini?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button class="cancel-btn">
+
+                Batal
+
+            </button>
+
+            <button class="confirm-btn">
+
+                Hapus
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/editevent.js"></script>
+
+</body>
+</html>
