@@ -17,26 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let greeting = "Halo";
 
-    const hour = new Date().getHours();
-
-    if (hour >= 5 && hour < 11) {
-
-        greeting = "Selamat Pagi";
-
-    } else if (hour < 15) {
-
-        greeting = "Selamat Siang";
-
-    } else if (hour < 18) {
-
-        greeting = "Selamat Sore";
-
-    } else {
-
-        greeting = "Selamat Malam";
-
-    }
-
     document.querySelector(".header h1").innerHTML = `
 
         ${greeting},
