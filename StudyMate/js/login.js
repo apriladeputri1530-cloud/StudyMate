@@ -12,11 +12,13 @@ loginForm.addEventListener("submit", function(e){
     e.preventDefault();
 
     const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+    const password = passwordInput.value; // Password tidak perlu di-trim agar spasi di sandi tidak hilang
 
-    const savedUser = localStorage.getItem("studymate-user");
+    // 1. Ambil daftar seluruh akun dari database lokal
+    const savedUsersList = localStorage.getItem("studymate-users-list");
 
-    if(!savedUser){
+    // Jika tidak ada satu pun akun yang terdaftar di sistem
+    if(!savedUsersList){
 
         alert("Akun belum terdaftar");
 
@@ -24,10 +26,23 @@ loginForm.addEventListener("submit", function(e){
 
     }
 
-    const user = JSON.parse(savedUser);
+    // Ubah string kembali menjadi Array objek
+    const userList = JSON.parse(savedUsersList);
 
-    if(email !== user.email ||
-       password !== user.password){
+    // 2. Cari akun yang email-nya cocok di dalam daftar array
+    const matchedUser = userList.find(user => user.email === email);
+
+    // Jika email tidak ditemukan di dalam daftar
+    if (!matchedUser) {
+
+        alert("Akun belum terdaftar");
+
+        return;
+
+    }
+
+    // 3. Validasi apakah password-nya sesuai
+    if(matchedUser.password !== password){
 
         alert("Email atau password salah");
 
@@ -36,19 +51,17 @@ loginForm.addEventListener("submit", function(e){
     }
 
     // status login
-
     localStorage.setItem(
         "isLoggedIn",
         "true"
     );
 
-    // simpan user yang sedang login
-
+    // simpan user yang sedang login aktif (untuk filter data & profil)
     localStorage.setItem(
 
         "currentUser",
 
-        JSON.stringify(user)
+        JSON.stringify(matchedUser)
 
     );
 

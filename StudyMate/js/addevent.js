@@ -115,12 +115,16 @@ if(editId){
 }
 
 // ===============================
-// SIMPAN EVENT
+// SIMPAN EVENT (UPDATED PER USER)
 // ===============================
 
 form.addEventListener("submit",function(e){
 
     e.preventDefault();
+
+    // 1. Ambil info user yang sedang login saat ini
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const userEmail = currentUser ? currentUser.email : "guest";
 
     let events = JSON.parse(localStorage.getItem("events")) || [];
 
@@ -129,6 +133,8 @@ form.addEventListener("submit",function(e){
     const eventData = {
 
         id : editId ? Number(editId) : Date.now(),
+
+        userOwner: userEmail, // <-- KUNCI PENTING: Menandai pemilik event berdasarkan email
 
         name : eventName.value,
 

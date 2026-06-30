@@ -11,8 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -22,13 +21,10 @@
     <!-- HEADER -->
     <header class="header">
         <div class="header-top">
-
-            <button class="back-btn">
+            <button type="button" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
             </button>
-
             <h1>Edit Tugas</h1>
-
         </div>
     </header>
 
@@ -39,115 +35,84 @@
 
             <!-- Nama Tugas -->
             <div class="form-group">
-
-                <label>
-                    Nama Tugas
-                </label>
-
+                <label>Nama Tugas</label>
                 <input
                     type="text"
-                    value="Laporan Praktikum"
+                    id="taskName"
                     placeholder="Contoh : Laporan Praktikum"
+                    required
                 >
-
             </div>
 
             <!-- Mata Kuliah -->
             <div class="form-group">
-
-                <label>
-                    Mata Kuliah
-                </label>
-
+                <label>Mata Kuliah</label>
                 <input
                     type="text"
-                    value="Interaksi Manusia dan Komputer"
+                    id="taskSubject"
                     placeholder="Contoh : IMK"
+                    required
                 >
-
             </div>
 
             <!-- Deskripsi -->
             <div class="form-group">
-
-                <label>
-                    Deskripsi
-                </label>
-
+                <label>Deskripsi</label>
                 <textarea
+                    id="taskDesc"
                     rows="4"
                     placeholder="Masukkan deskripsi tugas..."
-                >Membuat prototype aplikasi StudyMate.</textarea>
-
+                ></textarea>
             </div>
 
             <!-- Prioritas -->
             <div class="form-group">
-
-                <label>
-                    Prioritas
-                </label>
-
+                <label>Prioritas</label>
                 <div class="priority-group">
-
                     <button
                         type="button"
                         class="priority-btn low">
                         Rendah
                     </button>
-
                     <button
                         type="button"
                         class="priority-btn medium active">
                         Sedang
                     </button>
-
                     <button
                         type="button"
                         class="priority-btn high">
                         Tinggi
                     </button>
-
                 </div>
-
             </div>
 
             <!-- Tanggal -->
             <div class="form-group">
-
                 <label>
                     <i class="fa-regular fa-calendar"></i>
                     Pilih Tanggal Deadline
                 </label>
 
                 <div class="date-input" id="dateInput">
-
-                    <span>
-                        10 Juli 2025
-                    </span>
-
+                    <span>10 Juli 2025</span>
                     <i class="fa-solid fa-chevron-down"></i>
-
                 </div>
 
                 <div class="date-picker" id="datePicker">
-
                     <div class="calendar-header">
-
-                        <button class="month-btn">
+                        <button type="button" class="month-btn">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
 
                         <h3>Juli 2025</h3>
 
-                        <button class="month-btn">
+                        <button type="button" class="month-btn">
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
-
                     </div>
 
                     <div class="weekdays">
-
                         <span>Min</span>
                         <span>Sen</span>
                         <span>Sel</span>
@@ -155,154 +120,84 @@
                         <span>Kam</span>
                         <span>Jum</span>
                         <span>Sab</span>
-
                     </div>
 
-                    <div class="days">
-
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
-
-                        <button class="active">
-                            10
-                        </button>
-
-                        <button>11</button>
-                        <button>12</button>
-                        <button>13</button>
-                        <button>14</button>
-                        <button>15</button>
-                        <button>16</button>
-                        <button>17</button>
-                        <button>18</button>
-                        <button>19</button>
-                        <button>20</button>
-                        <button>21</button>
-                        <button>22</button>
-                        <button>23</button>
-                        <button>24</button>
-                        <button>25</button>
-                        <button>26</button>
-                        <button>27</button>
-                        <button>28</button>
-                        <button>29</button>
-                        <button>30</button>
-                        <button>31</button>
-
-                    </div>
-
+                    <!-- ELEMEN HARI DIKOSONGKAN -->
+                    <!-- Bagian ini akan diisi secara otomatis oleh logika JavaScript -->
+                    <div class="days"></div>
                 </div>
-
             </div>
 
             <!-- Jam -->
             <div class="form-group">
-
                 <label>
                     <i class="fa-regular fa-clock"></i>
                     Pilih Waktu Deadline
                 </label>
 
                 <div class="time-input" id="timeInput">
-
-                    <span>
-                        08:00
-                    </span>
-
+                    <span>08:00</span>
                     <i class="fa-solid fa-chevron-down"></i>
-
                 </div>
 
                 <div class="time-picker" id="timePicker">
-
                     <div class="picker-wrapper">
-
                         <div class="picker-column">
-
                             <h4>Jam</h4>
-
                             <div class="picker-list">
-
-                                <button>00</button>
-                                <button>01</button>
-                                <button>02</button>
-                                <button>03</button>
-                                <button>04</button>
-                                <button>05</button>
-                                <button>06</button>
-                                <button>07</button>
-
-                                <button class="active">
-                                    08
-                                </button>
-
-                                <button>09</button>
-                                <button>10</button>
-                                <button>11</button>
-                                <button>12</button>
-                                <button>13</button>
-                                <button>14</button>
-                                <button>15</button>
-                                <button>16</button>
-                                <button>17</button>
-                                <button>18</button>
-                                <button>19</button>
-                                <button>20</button>
-                                <button>21</button>
-                                <button>22</button>
-                                <button>23</button>
-
+                                <button type="button">00</button>
+                                <button type="button">01</button>
+                                <button type="button">02</button>
+                                <button type="button">03</button>
+                                <button type="button">04</button>
+                                <button type="button">05</button>
+                                <button type="button">06</button>
+                                <button type="button">07</button>
+                                <button type="button" class="active">08</button>
+                                <button type="button">09</button>
+                                <button type="button">10</button>
+                                <button type="button">11</button>
+                                <button type="button">12</button>
+                                <button type="button">13</button>
+                                <button type="button">14</button>
+                                <button type="button">15</button>
+                                <button type="button">16</button>
+                                <button type="button">17</button>
+                                <button type="button">18</button>
+                                <button type="button">19</button>
+                                <button type="button">20</button>
+                                <button type="button">21</button>
+                                <button type="button">22</button>
+                                <button type="button">23</button>
                             </div>
-
                         </div>
 
                         <div class="picker-column">
-
                             <h4>Menit</h4>
-
                             <div class="picker-list">
-
-                                <button class="active">00</button>
-                                <button>05</button>
-                                <button>10</button>
-                                <button>15</button>
-                                <button>20</button>
-                                <button>25</button>
-                                <button>30</button>
-                                <button>35</button>
-                                <button>40</button>
-                                <button>45</button>
-                                <button>50</button>
-                                <button>55</button>
-
+                                <button type="button" class="active">00</button>
+                                <button type="button">05</button>
+                                <button type="button">10</button>
+                                <button type="button">15</button>
+                                <button type="button">20</button>
+                                <button type="button">25</button>
+                                <button type="button">30</button>
+                                <button type="button">35</button>
+                                <button type="button">40</button>
+                                <button type="button">45</button>
+                                <button type="button">50</button>
+                                <button type="button">55</button>
                             </div>
-
                         </div>
-
                     </div>
 
-                    <button class="picker-confirm">
-                        Pilih Waktu
-                    </button>
-
+                    <button type="button" class="picker-confirm">Pilih Waktu</button>
                 </div>
-
             </div>
 
             <!-- Simpan -->
-            <button
-                type="submit"
-                class="save-btn">
-
+            <button type="submit" class="save-btn">
                 Simpan Perubahan
-
             </button>
 
         </form>

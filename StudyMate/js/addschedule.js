@@ -48,28 +48,18 @@ document.getElementById("previewLecturer");
 function updatePreview(){
 
     previewSubject.textContent =
-
         subject.value ||
-
         "Nama Mata Kuliah";
 
-
     previewSchedule.textContent =
-
-        `${day.value} • ${startTime.value} - ${endTime.value}`;
-
+        `${day.value} • ${startTime.value || "00:00"} - ${endTime.value || "00:00"}`;
 
     previewRoom.textContent =
-
         room.value ||
-
         "Ruangan";
 
-
     previewLecturer.textContent =
-
         lecturer.value ||
-
         "Nama Dosen";
 
 }
@@ -80,52 +70,65 @@ function updatePreview(){
 // ==============================
 
 subject.addEventListener(
-
     "input",
-
     updatePreview
-
 );
 
 day.addEventListener(
-
     "change",
-
     updatePreview
-
 );
 
 startTime.addEventListener(
-
     "input",
-
     updatePreview
-
 );
 
 endTime.addEventListener(
-
     "input",
-
     updatePreview
-
 );
 
 room.addEventListener(
-
     "input",
-
     updatePreview
-
 );
 
 lecturer.addEventListener(
-
     "input",
-
     updatePreview
-
 );
+
+
+// ==============================
+// DETEKSI MODE EDIT / DATA LAMA
+// ==============================
+
+// Ambil status login akun aktif saat ini
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const userEmail = currentUser ? currentUser.email : "guest";
+
+let schedules = JSON.parse(localStorage.getItem("schedules")) || [];
+const editId = localStorage.getItem("editScheduleId");
+
+// Jika ada editId, berarti user sedang menekan tombol Edit (Pensil)
+if (editId) {
+    const dataToEdit = schedules.find(item => item.id == editId);
+    
+    if (dataToEdit) {
+        // Isikan data lama ke dalam form input
+        if (subject) subject.value = dataToEdit.subject || "";
+        if (day) day.value = dataToEdit.day || "Senin";
+        if (startTime) startTime.value = dataToEdit.startTime || "";
+        if (endTime) endTime.value = dataToEdit.endTime || "";
+        if (room) room.value = dataToEdit.room || "";
+        if (lecturer) lecturer.value = dataToEdit.lecturer || "";
+        
+        // Perbarui teks tombol simpan jika ada di halaman HTML Anda
+        const saveBtn = document.querySelector(".save-btn") || document.querySelector("button[type='submit']");
+        if (saveBtn) saveBtn.textContent = "Simpan Perubahan";
+    }
+}
 
 
 // ==============================
@@ -133,90 +136,64 @@ lecturer.addEventListener(
 // ==============================
 
 form.addEventListener(
-
     "submit",
-
     function(e){
 
         e.preventDefault();
 
+        schedules = JSON.parse(localStorage.getItem("schedules")) || [];
 
-        let schedules =
+        if (editId) {
+            // --- MODE EDIT: Perbarui data lama ---
+            schedules = schedules.map(item => {
+                if (item.id == editId) {
+                    return {
+                        ...item, // Pertahankan ID asli dan userOwner aslinya
+                        subject: subject.value,
+                        day: day.value,
+                        startTime: startTime.value,
+                        endTime: endTime.value,
+                        room: room.value,
+                        lecturer: lecturer.value
+                    };
+                }
+                return item;
+            });
+            
+            localStorage.removeItem("editScheduleId"); // Hapus tanda setelah selesai
+            alert("Jadwal berhasil diperbarui!");
 
-        JSON.parse(
+        } else {
+            // --- MODE TAMBAH BARU: Buat objek jadwal baru ---
+            const schedule = {
+                id: Date.now(),
+                userOwner: userEmail, // <--- AKUN ANDA MENGIKAT DI SINI SEKARANG
+                subject: subject.value,
+                day: day.value,
+                startTime: startTime.value,
+                endTime: endTime.value,
+                room: room.value,
+                lecturer: lecturer.value
+            };
 
-            localStorage.getItem(
-
-                "schedules"
-
-            )
-
-        ) || [];
-
-
-    const schedule = {
-
-    id: Date.now(),
-
-    subject: subject.value,
-
-    day: day.value,
-
-    startTime: startTime.value,
-
-    endTime: endTime.value,
-
-    room: room.value,
-
-    lecturer: lecturer.value
-
-};
-
-
-        schedules.push(
-
-            schedule
-
-        );
-
+            schedules.push(schedule);
+            alert("Jadwal berhasil ditambahkan!");
+        }
 
         localStorage.setItem(
-
             "schedules",
-
-            JSON.stringify(
-
-                schedules
-
-            )
-
+            JSON.stringify(schedules)
         );
 
-
-        // hari terakhir dipilih
-
+        // Hari terakhir dipilih
         localStorage.setItem(
-
             "selectedDay",
-
             day.value
-
         );
 
-
-        alert(
-
-            "Jadwal berhasil ditambahkan"
-
-        );
-
-
-        window.location.href =
-
-        "schedule.html";
+        window.location.href = "schedule.html";
 
     }
-
 );
 
 
@@ -225,19 +202,13 @@ form.addEventListener(
 // ==============================
 
 document.querySelector(
-
     ".back-btn"
-
 )?.addEventListener(
-
     "click",
-
     ()=>{
-
+        localStorage.removeItem("editScheduleId"); // Hapus sisa tanda edit jika batal
         history.back();
-
     }
-
 );
 
 

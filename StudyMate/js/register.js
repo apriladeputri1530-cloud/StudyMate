@@ -52,31 +52,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         // ==========================
-        // CEK EMAIL
+        // CEK EMAIL (Mendukung Array Banyak Akun)
         // ==========================
 
-        const savedUser = JSON.parse(
+        // Mengambil daftar semua akun yang ada di LocalStorage
+        let userList = JSON.parse(
 
-            localStorage.getItem("studymate-user")
+            localStorage.getItem("studymate-users-list")
 
-        );
+        ) || [];
 
 
-        if(savedUser){
+        // Cek apakah email yang diinput sudah ada di dalam daftar akun
+        const isEmailExist = userList.some(user => user.email === email);
 
-            if(savedUser.email === email){
+        if(isEmailExist){
 
-                alert("Email sudah terdaftar.");
+            alert("Email sudah terdaftar.");
 
-                return;
-
-            }
+            return;
 
         }
 
 
         // ==========================
-        // DATA USER
+        // DATA USER BARU
         // ==========================
 
         const userData = {
@@ -94,19 +94,21 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
 
-        // simpan akun
+        // Tambahkan akun baru ke dalam daftar array
+        userList.push(userData);
 
+
+        // Simpan kembali daftar seluruh akun ke LocalStorage
         localStorage.setItem(
 
-            "studymate-user",
+            "studymate-users-list",
 
-            JSON.stringify(userData)
+            JSON.stringify(userList)
 
         );
 
 
-        // simpan user aktif
-
+        // Simpan sesi user aktif saat ini yang baru mendaftar
         localStorage.setItem(
 
             "currentUser",

@@ -88,7 +88,7 @@ previewPriority.textContent =
 updatePreview();
 
 // ===============================
-// SIMPAN TUGAS
+// SIMPAN TUGAS (UPDATED PER USER)
 // ===============================
 
 const form =
@@ -98,12 +98,19 @@ form.addEventListener("submit", function (e) {
 
     e.preventDefault();
 
+    // 1. Ambil data user yang sedang login saat ini
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const userEmail = currentUser ? currentUser.email : "guest";
+
     let tasks =
         JSON.parse(localStorage.getItem("tasks")) || [];
 
+    // 2. Buat objek tugas baru dengan menyertakan properti userOwner
     const newTask = {
 
         id: Date.now(),
+
+        userOwner: userEmail, // <-- KUNCI PENTING: Menandai pemilik tugas berdasarkan email
 
         name: taskName.value,
 
